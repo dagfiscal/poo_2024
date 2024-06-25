@@ -7,7 +7,7 @@
 lista=[]
 
 i=1
-while i<=2:
+while i<=120:
    valor=int(input(f"Valor {i}: "))
    lista.append(valor)
    i+=1 
@@ -20,4 +20,4 @@ for i in range(1,121):
    lista.append(valor)
    i+=1 
 
-# print(lista)    
+print(lista)    
