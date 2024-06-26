@@ -113,8 +113,8 @@ class Coches:
 class Camiones(Coches):
    def __init__(self,color,marca,modelo,velocidad,caballaje,plazas,eje,capacidadCarga):
     super().__init__(color,marca,modelo,velocidad,caballaje,plazas)
-    self.eje=eje
-    self.capacidadCarga=capacidadCarga
+    self.__eje=eje
+    self.__capacidadCarga=capacidadCarga
 
    __tipo_carga=""
 
@@ -123,16 +123,19 @@ class Camiones(Coches):
     return self.__tipo_carga
 
    def getEje(self):
-     return self.eje
+     return self.__eje
 
    def setEje(self,eje):
-      self.eje=eje  
+      self.__eje=eje  
 
    def getcapacidadCarga(self):
-     return self.capacidadCarga
+     return self.__capacidadCarga
 
    def setcapacidadCarga(self,capacidadCarga):
-      self.capacidadCarga=capacidadCarga     
+      self.__delattr__capacidadCarga=capacidadCarga 
+
+   def getInfo(self):
+      print(f"Marca: {self.getMarca()} {self.getColor()}, numeros de plazas: {self.getPlazas()} \nModelo: {self.getModelo()} con una velocidad de {self.getVelocidad()} Km/h, una potencia de {self.getCaballaje()} hp, con {self.getEje()} ejes y una capacidad de carga de {self.getcapacidadCarga()} metros cubicos")       
 
 
 class Camionetas(Coches):
@@ -157,5 +160,9 @@ class Camionetas(Coches):
 
   def getCerrada(self):
     return self.cerrada
+
+  def getInfo(self):
+      print(f"Marca: {self.getMarca()} {self.getColor()}, numeros de plazas: {self.getPlazas()} \nModelo: {self.getModelo()} con una velocidad de {self.getVelocidad()} Km/h, una potencia de {self.getCaballaje()} hp, con la tracción {self.getTraccion()} y es cerrada {self.getCerrada()} ")  
+  
 
 
