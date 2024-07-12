@@ -19,7 +19,8 @@ class Figuras:
         print(f"La fugura se mueve en la siguiente coordenada: {self.getX(),self.getY()}")
 
     def calcularArea(self):
-        return self.calcularArea
+        area=0
+        return area
 
     #Metodos de gettes y Setters faltantes
 
